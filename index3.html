@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Tiếng Việt Thực Hành - Trang 3: Luyện Tập Viết & Sửa Lỗi Câu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050714;
+            --primary-glow: #10b981;
+            --accent-cyan: #00f2fe;
+            --accent-gold: #fbbf24;
+            --accent-purple: #c084fc;
+            --accent-emerald: #34d399;
+            --accent-pink: #f43f5e;
+            --text-light: #e2e8f0;
+            --glass-bg: rgba(15, 23, 42, 0.78);
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        #space-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at center, #062e24 0%, #04050e 100%);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.25);
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            padding: 0.4rem 1.3rem;
+            background: linear-gradient(90deg, #10b981 0%, #00f2fe 100%);
+            color: #000;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #a7f3d0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin: 2.5rem 0 1.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .content-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .exercise-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sub-q {
+            margin-bottom: 0.6rem;
+            padding-left: 0.5rem;
+        }
+
+        .highlight-box {
+            background: rgba(16, 185, 129, 0.12);
+            border-left: 4px solid var(--accent-emerald);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #a7f3d0;
+            margin: 0.8rem 0;
+        }
+
+        .warning-box {
+            background: rgba(244, 63, 94, 0.12);
+            border-left: 4px solid var(--accent-pink);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #fecdd3;
+            margin: 0.8rem 0;
+        }
+
+        .btn-toggle {
+            background: linear-gradient(90deg, #10b981, #00f2fe);
+            border: none;
+            color: #000;
+            padding: 0.45rem 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-top: 0.6rem;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .btn-toggle:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .answer-box {
+            display: none;
+            margin-top: 1rem;
+            padding: 1.2rem;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 10px;
+            color: #d1fae5;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        ul, ol {
+            padding-left: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: #fef08a;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="space-canvas"></canvas>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <span class="badge">TRANG 3 • TIẾNG VIỆT THỰC HÀNH</span>
+            <h1>BÀI TẬP THỰC HÀNH VIẾT CÂU VÀ SỬA LỖI CÂU</h1>
+            <p class="subtitle">HỌC VIỆN PHẬT GIÁO VIỆT NAM (ĐTTX - KHÓA XII)</p>
+            <p style="margin-top:0.5rem; font-size:0.9rem; color:#6ee7b7;">Phần IV: Thực Hành Minh Họa (Bài 7 đến Bài 11)</p>
+        </header>
+
+        <h2 class="section-title">✍️ BÀI TẬP THỰC HÀNH MINH HỌA (BÀI 7 - BÀI 11)</h2>
+        <div class="content-box">
+            
+            <!-- BÀI 7 -->
+            <div class="exercise-item">
+                <div class="exercise-title">📝 Bài 7: Viết câu theo cấu trúc yêu cầu</div>
+                <p><em>Yêu cầu:</em> Viết một câu cho mỗi yêu cầu bên dưới và phân tích chỉ rõ các thành phần cấu tạo trong câu:</p>
+                
+                <div class="sub-q"><strong>a)</strong> Câu đơn có trạng ngữ chỉ thời gian.</div>
+                <div class="sub-q"><strong>b)</strong> Câu gồm: Chuyển tiếp ngữ – Trạng ngữ – Chủ ngữ – Phụ chú – Vị ngữ.</div>
+                <div class="sub-q"><strong>c)</strong> Câu gồm: Tình thái ngữ – Chủ ngữ – Vị ngữ.</div>
+                <div class="sub-q"><strong>d)</strong> Câu phức có chủ ngữ là một cụm chủ ngữ – vị ngữ (bao chứa).</div>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-b7')">👁️ Xem Gợi Ý Đáp Án Bài 7</button>
+                <div class="answer-box" id="ans-b7">
+                    <strong>Gợi ý đáp án & Phân tích thành phần:</strong>
+                    <ul>
+                        <li><strong>a) Câu đơn có trạng ngữ chỉ thời gian:</strong><br>
+                            <em>“Buổi tối, học viên đọc lại bài.”</em><br>
+                            ➔ <strong>Trạng ngữ:</strong> Buổi tối | <strong>Chủ ngữ:</strong> học viên | <strong>Vị ngữ:</strong> đọc lại bài.
+                        </li>
+                        <li><strong>b) Chuyển tiếp ngữ – Trạng ngữ – Chủ ngữ – Phụ chú – Vị ngữ:</strong><br>
+                            <em>“Hơn nữa, trong buổi thảo luận, Minh, đại diện của nhóm, đã giải thích rõ cách làm.”</em><br>
+                            ➔ <strong>Chuyển tiếp ngữ:</strong> Hơn nữa <em>(phù hợp bổ sung cho ý đã nêu trước)</em><br>
+                            ➔ <strong>Trạng ngữ:</strong> trong buổi thảo luận<br>
+                            ➔ <strong>Chủ ngữ:</strong> Minh<br>
+                            ➔ <strong>Phụ chú:</strong> đại diện của nhóm<br>
+                            ➔ <strong>Vị ngữ:</strong> đã giải thích rõ cách làm.
+                        </li>
+                        <li><strong>c) Tình thái ngữ – Chủ ngữ – Vị ngữ:</strong><br>
+                            <em>“Có lẽ, nhóm chúng tôi sẽ hoàn thành bài đúng hạn.”</em><br>
+                            ➔ <strong>Tình thái ngữ:</strong> Có lẽ | <strong>Chủ ngữ:</strong> nhóm chúng tôi | <strong>Vị ngữ:</strong> sẽ hoàn thành bài đúng hạn.
+                        </li>
+                        <li><strong>d) Câu phức có chủ ngữ là một cụm C - V:</strong><br>
+                            <em>“Mọi người hợp tác giúp công việc tiến triển.”</em><br>
+                            ➔ <strong>Chủ ngữ lớn:</strong> cụm <em>“Mọi người / hợp tác”</em> (chứa cụm C-V nhỏ)<br>
+                            ➔ <strong>Vị ngữ lớn:</strong> <em>“giúp công việc tiến triển”</em>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BÀI 8 -->
+            <div class="exercise-item">
+                <div class="exercise-title">🔗 Bài 8: Viết câu ghép và phân tích ranh giới vế</div>
+                <p><em>Yêu cầu:</em> Viết câu ghép thể hiện bốn quan hệ nghĩa và gạch ranh giới phân cách giữa các vế câu:</p>
+                <p><strong>a)</strong> Quan hệ Nguyên nhân – Kết quả &nbsp;&nbsp;|&nbsp;&nbsp; <strong>b)</strong> Quan hệ Điều kiện – Kết quả</p>
+                <p><strong>c)</strong> Quan hệ Nhượng bộ &nbsp;&nbsp;|&nbsp;&nbsp; <strong>d)</strong> Quan hệ Càng… càng…</p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-b8')">👁️ Xem Gợi Ý Đáp Án Bài 8</button>
+                <div class="answer-box" id="ans-b8">
+                    <strong>Gợi ý đáp án & Phân tích ranh giới:</strong>
+                    <ul>
+                        <li><strong>a) Nguyên nhân – Kết quả:</strong><br>
+                            <em>“Vì nhóm chuẩn bị kĩ <strong>/</strong> nên buổi trình bày diễn ra thuận lợi.”</em>
+                        </li>
+                        <li><strong>b) Điều kiện – Kết quả:</strong><br>
+                            <em>“Nếu mỗi người kiểm tra lại nguồn tin <strong>/</strong> thì nhóm sẽ hạn chế được sai sót.”</em>
+                        </li>
+                        <li><strong>c) Nhượng bộ:</strong><br>
+                            <em>“Mặc dù thời gian không nhiều <strong>/</strong> nhưng các học viên vẫn hoàn thành nhiệm vụ.”</em>
+                        </li>
+                        <li><strong>d) Càng… càng…:</strong><br>
+                            <em>“Người học càng đọc sâu <strong>/</strong> thì khả năng phân tích của họ càng phát triển.”</em>
+                        </li>
+                    </ul>
+                    <div class="highlight-box">📌 <em>Lưu ý phân tích:</em> Khi phân tích nòng cốt, cần tách từ nối (quan hệ từ) ra khỏi nòng cốt C-V của từng vế; tuyệt đối không xem từ nối là chủ ngữ của vế.</div>
+                </div>
+            </div>
+
+            <!-- BÀI 9 -->
+            <div class="exercise-item">
+                <div class="exercise-title">🛠️ Bài 9: Sửa lỗi về thành phần câu</div>
+                <p><em>Yêu cầu:</em> Chỉ rõ lỗi sai thành phần và thực hành sửa lại cho đúng:</p>
+                <p><strong>a)</strong> Qua việc đọc và suy ngẫm đã giúp tôi hiểu rõ trách nhiệm của mình.</p>
+                <p><strong>b)</strong> Tinh thần lắng nghe và tôn trọng sự khác biệt của mỗi học viên.</p>
+                <p><strong>c)</strong> Để xây dựng môi trường học tập nghiêm túc và thân thiện.</p>
+                <p><strong>d)</strong> Với sự hướng dẫn của giảng viên đã làm cho nhóm hoàn thành bài.</p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-b9')">👁️ Xem Gợi Ý Đáp Án Bài 9</button>
+                <div class="answer-box" id="ans-b9">
+                    <strong>Gợi ý đáp án & Giải thích lỗi:</strong>
+                    <ul>
+                        <li><strong>a) Lỗi: Thiếu chủ ngữ</strong> (do cụm <em>"Qua việc..."</em> bị biến thành trạng ngữ, làm câu mất chủ thể).<br>
+                            ➔ <em>Cách sửa:</em> Bỏ từ "Qua" ➔ <strong>“Việc đọc và suy ngẫm đã giúp tôi hiểu rõ trách nhiệm của mình.”</strong>
+                        </li>
+                        <li><strong>b) Lỗi: Thiếu vị ngữ</strong> (trong ngữ cảnh yêu cầu một câu trần thuật độc lập trọn vẹn).<br>
+                            ➔ <em>Cách sửa:</em> Bổ sung vị ngữ ➔ <strong>“Tinh thần lắng nghe và tôn trọng sự khác biệt của mỗi học viên <u>góp phần tạo nên buổi thảo luận hiệu quả</u>.”</strong>
+                        </li>
+                        <li><strong>c) Lỗi: Thiếu cả nòng cốt C-V</strong> (câu chỉ có cụm trạng ngữ chỉ mục đích <em>"Để..."</em>).<br>
+                            ➔ <em>Cách sửa:</em> Thêm nòng cốt ➔ <strong>“Để xây dựng môi trường học tập nghiêm túc và thân thiện, <u>mỗi học viên cần tuân thủ quy định và tôn trọng người khác</u>.”</strong>
+                        </li>
+                        <li><strong>d) Lỗi: Thiếu chủ ngữ</strong> (cụm <em>"Với sự..."</em> làm trạng ngữ nên câu không có chủ thể cho vị ngữ).<br>
+                            ➔ <em>Cách sửa:</em> <strong>“Với sự hướng dẫn của giảng viên, <u>nhóm đã hoàn thành bài</u>.”</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BÀI 10 -->
+            <div class="exercise-item">
+                <div class="exercise-title">⚠️ Bài 10: Sửa lỗi logic và quan hệ giữa các vế câu</div>
+                <p><em>Yêu cầu:</em> Phát hiện nguyên nhân sai quan hệ logic/từ nối và sửa lại:</p>
+                <p><strong>a)</strong> Sau khi hoàn thành khóa học, nhà trường trao giấy chứng nhận cho học viên.</p>
+                <p><strong>b)</strong> Mặc dù thời gian chuẩn bị ngắn nên nhóm vẫn hoàn thành nhiệm vụ.</p>
+                <p><strong>c)</strong> Vì mỗi người có hoàn cảnh riêng nên vì vậy chúng ta cần lắng nghe.</p>
+                <p><strong>d)</strong> Minh và Nam đều chuẩn bị bài chu đáo nên hai người có cách học hoàn toàn khác nhau.</p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-b10')">👁️ Xem Gợi Ý Đáp Án Bài 10</button>
+                <div class="answer-box" id="ans-b10">
+                    <strong>Gợi ý đáp án & Phân tích lỗi logic:</strong>
+                    <ul>
+                        <li><strong>a) Sai quan hệ chủ thể:</strong> Chủ thể của hành động <em>"hoàn thành khóa học"</em> chưa rõ, dễ bị hiểu lầm là <em>"nhà trường"</em>.<br>
+                            ➔ <em>Sửa lại:</em> <strong>“Sau khi <u>học viên hoàn thành khóa học</u>, nhà trường trao giấy chứng nhận cho họ.”</strong>
+                        </li>
+                        <li><strong>b) Sai kết hợp cặp từ nối:</strong> Cặp <em>"Mặc dù... nên..."</em> không khớp quan hệ nhượng bộ.<br>
+                            ➔ <em>Sửa lại:</em> <strong>“Mặc dù thời gian chuẩn bị ngắn <u>nhưng</u> nhóm vẫn hoàn thành nhiệm vụ.”</strong>
+                        </li>
+                        <li><strong>c) Chồng lặp từ nối:</strong> Dùng thừa cả <em>"nên"</em> và <em>"vì vậy"</em>.<br>
+                            ➔ <em>Sửa lại:</em> <strong>“Vì mỗi người có hoàn cảnh riêng <u>nên</u> chúng ta cần lắng nghe.”</strong>
+                        </li>
+                        <li><strong>d) Sai quan hệ logic (nhân quả không có căn cứ):</strong> Việc chuẩn bị chu đáo và cách học khác nhau không phải quan hệ nguyên nhân - kết quả.<br>
+                            ➔ <em>Sửa lại (chuyển sang quan hệ đối lập):</em> <strong>“Minh và Nam đều chuẩn bị bài chu đáo <u>nhưng</u> hai người có cách học hoàn toàn khác nhau.”</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BÀI 11 -->
+            <div class="exercise-item">
+                <div class="exercise-title">🔍 Bài 11: Sửa dấu câu và giải quyết câu mơ hồ quy chiếu</div>
+                <p><strong>a)</strong> Nếu có điều chưa rõ. Học viên cần hỏi lại.</p>
+                <p><strong>b)</strong> Người hướng dẫn hỏi học viên đã hoàn thành bài chưa?</p>
+                <p><strong>c)</strong> Nam trao đổi với Minh về bài viết của mình. <em>(Yêu cầu: Viết lại theo 2 cách hiểu khác nhau)</em></p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-b11')">👁️ Xem Gợi Ý Đáp Án Bài 11</button>
+                <div class="answer-box" id="ans-b11">
+                    <strong>Gợi ý đáp án chi tiết:</strong>
+                    <ul>
+                        <li><strong>a) Sai dấu câu (tách đứt vế điều kiện - kết quả):</strong><br>
+                            ➔ <em>Sửa lại:</em> <strong>“Nếu có điều chưa rõ, học viên cần hỏi lại.”</strong> (dùng dấu phẩy thay dấu chấm).
+                        </li>
+                        <li><strong>b) Sai dấu hỏi cho câu trần thuật thuật lại lời hỏi:</strong><br>
+                            ➔ <em>Cách 1 (Thuật lại gián tiếp):</em> <strong>“Người hướng dẫn hỏi học viên đã hoàn thành bài chưa.”</strong> (dùng dấu chấm)<br>
+                            ➔ <em>Cách 2 (Dẫn trực tiếp):</em> <strong>“Người hướng dẫn hỏi: ‘Các học viên đã hoàn thành bài chưa?’”</strong>
+                        </li>
+                        <li><strong>c) Sửa câu mơ hồ về đại từ quy chiếu ("của mình"):</strong><br>
+                            ➔ <em>Cách hiểu 1 (Bài viết của Nam):</em> <strong>“Nam trao đổi với Minh về bài viết do Nam thực hiện.”</strong><br>
+                            ➔ <em>Cách hiểu 2 (Bài viết của Minh):</em> <strong>“Nam trao đổi với Minh về bài viết do Minh thực hiện.”</strong>
+                        </li>
+                    </ul>
+                    <div class="warning-box">📌 <em>Ghi nhớ:</em> Khi sửa lỗi quy chiếu đại từ mơ hồ, cách viết lại hoàn toàn phụ thuộc vào ý định diễn đạt thực tế của người viết.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            Học Viện Phật Giáo Việt Nam (ĐTTX-K.12) • Đề Cương Ôn Tập Tiếng Việt Thực Hành — Trang 3 🌟
+        </footer>
+    </div>
+
+    <!-- Script Hiệu Ứng Vũ Trụ Starfield -->
+    <script>
+        const canvas = document.getElementById('space-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let stars = [];
+        const numStars = 180;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initStars();
+        }
+
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < numStars; i++) {
+                stars.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 1.8 + 0.2,
+                    color: ['#ffffff', '#a7f3d0', '#34d399', '#00f2fe', '#fbbf24'][Math.floor(Math.random() * 5)],
+                    alpha: Math.random(),
+                    speed: Math.random() * 0.012 + 0.004
+                });
+            }
+        }
+
+        function drawStars() {
+            ctx.clearRect(0, 0, width, height);
+
+            let grad1 = ctx.createRadialGradient(width * 0.35, height * 0.35, 50, width * 0.35, height * 0.35, width * 0.55);
+            grad1.addColorStop(0, 'rgba(16, 185, 129, 0.18)');
+            grad1.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad1;
+            ctx.fillRect(0, 0, width, height);
+
+            let grad2 = ctx.createRadialGradient(width * 0.75, height * 0.75, 50, width * 0.75, height * 0.75, width * 0.45);
+            grad2.addColorStop(0, 'rgba(0, 242, 254, 0.12)');
+            grad2.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad2;
+            ctx.fillRect(0, 0, width, height);
+
+            stars.forEach(star => {
+                star.alpha += star.speed;
+                if (star.alpha > 1 || star.alpha < 0) {
+                    star.speed = -star.speed;
+                }
+
+                ctx.save();
+                ctx.globalAlpha = Math.abs(star.alpha);
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = star.color;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = star.color;
+                ctx.fill();
+                ctx.restore();
+            });
+
+            requestAnimationFrame(drawStars);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        drawStars();
+
+        function toggleAns(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === "block") {
+                el.style.display = "none";
+            } else {
+                el.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

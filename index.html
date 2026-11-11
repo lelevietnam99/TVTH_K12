@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiếng Việt Thực Hành - Master Hub Dashboard (Index 1 - 5)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #030712;
+            --primary-glow: #3b82f6;
+            --accent-cyan: #00f2fe;
+            --accent-gold: #fbbf24;
+            --accent-purple: #c084fc;
+            --accent-emerald: #10b981;
+            --accent-pink: #f43f5e;
+            --text-light: #f3f4f6;
+            --glass-bg: rgba(15, 23, 42, 0.82);
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        #space-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at center, #0b132b 0%, #030712 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.25);
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            padding: 0.45rem 1.5rem;
+            background: linear-gradient(90deg, #3b82f6 0%, #00f2fe 50%, #c084fc 100%);
+            color: #000;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #67e8f9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.6rem;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin: 2.8rem 0 1.4rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        /* Hub Navigation Cards Grid */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .hub-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 22px;
+            padding: 1.8rem;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hub-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 15px 35px rgba(0, 242, 254, 0.2);
+        }
+
+        .hub-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .hub-card-tag {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .tag-p1 { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
+        .tag-p2 { background: rgba(192, 132, 252, 0.2); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.4); }
+        .tag-p3 { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+        .tag-p4 { background: rgba(244, 63, 94, 0.2); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); }
+        .tag-p5 { background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.4); }
+
+        .file-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        .hub-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.7rem;
+        }
+
+        .hub-card-list {
+            font-size: 0.93rem;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+        }
+
+        .hub-card-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        .hub-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(90deg, #3b82f6, #00f2fe);
+            color: #000;
+            font-weight: 800;
+            padding: 0.7rem 1.4rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.88rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hub-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px var(--accent-cyan);
+        }
+
+        /* Content Summary Section */
+        .content-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.2rem;
+            backdrop-filter: blur(14px);
+            margin-bottom: 3rem;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.93rem;
+        }
+
+        th, td {
+            padding: 1rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        th {
+            background: rgba(59, 130, 246, 0.22);
+            color: var(--accent-cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 0.8rem 1.4rem;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.88rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="space-canvas"></canvas>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <span class="badge">TIẾNG VIỆT THỰC HÀNH • MASTER HUB INDEX</span>
+            <h1>TỔNG HỢP TOÀN BỘ ĐỀ CƯƠNG THỰC HÀNH (INDEX 1 - 5)</h1>
+            <p class="subtitle">HỌC VIỆN PHẬT GIÁO VIỆT NAM — LỚP ĐÀO TẠO TỪ XA KHÓA XII</p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Nhập từ khóa cần tìm (vd: chính tả, từ nối, câu ghép, diễn dịch, phản biện...)" onkeyup="filterCards()">
+        </div>
+
+        <!-- Section 1: Dashboard 5 Trang HTML -->
+        <h2 class="section-title">📂 1. DANH SÁCH CÁC TRANG ÔN TẬP THỰC HÀNH</h2>
+        <div class="hub-grid" id="hubGrid">
+            
+            <!-- Index 1 -->
+            <div class="hub-card" data-keywords="chính tả phụ âm đầu âm cuối dấu thanh bài 1 bài 2 bài 3 index1">
+                <div>
+                    <div class="hub-card-header">
+                        <span class="hub-card-tag tag-p1">Trang 1</span>
+                        <span class="file-name">index1.html</span>
+                    </div>
+                    <div class="hub-card-title">Phần I & II: Mục Tiêu & Chính Tả</div>
+                    <ul class="hub-card-list">
+                        <li><strong>I. Mục tiêu ôn tập:</strong> 5 nội dung trọng tâm.</li>
+                        <li><strong>II. Lí thuyết chính tả:</strong> s/x, ch/tr, d/gi/r, l/n, n/ng, hỏi/ngã, quy tắc viết hoa & biến thể i/y.</li>
+                        <li><strong>Bài tập 1 - 3:</strong> Chọn từ đúng, sửa 6 lỗi trong đoạn văn, phân loại lỗi.</li>
+                    </ul>
+                </div>
+                <a href="index1.html" class="hub-btn">Truy Cập Trang 1 ➔</a>
+            </div>
+
+            <!-- Index 2 -->
+            <div class="hub-card" data-keywords="từ ngữ giải nghĩa bao dung dung túng khiêm nhường tự ti yếu điểm điểm yếu câu đơn câu ghép câu phức index2">
+                <div>
+                    <div class="hub-card-header">
+                        <span class="hub-card-tag tag-p2">Trang 2</span>
+                        <span class="file-name">index2.html</span>
+                    </div>
+                    <div class="hub-card-title">Phần III & IV: Từ Ngữ & Cấu Trúc Câu</div>
+                    <ul class="hub-card-list">
+                        <li><strong>III. Từ ngữ:</strong> Bài tập 4 (giải nghĩa ngữ cảnh) & Bài tập 5 (phát hiện sửa lỗi dùng từ).</li>
+                        <li><strong>IV. Lí thuyết câu:</strong> Nòng cốt C-V, trạng ngữ, phụ chú, tình thái ngữ, chuyển tiếp ngữ.</li>
+                        <li><strong>Cấu tạo câu:</strong> Câu đơn, câu ghép (6 quan hệ nghĩa), câu phức bao chứa & 7 lỗi câu.</li>
+                    </ul>
+                </div>
+                <a href="index2.html" class="hub-btn">Truy Cập Trang 2 ➔</a>
+            </div>
+
+            <!-- Index 3 -->
+            <div class="hub-card" data-keywords="viết câu câu ghép sửa lỗi thành phần thiếu chủ ngữ thiếu vị ngữ sai logic dấu câu quy chiếu mơ hồ bài 7 bài 8 bài 9 bài 10 bài 11 index3">
+                <div>
+                    <div class="hub-card-header">
+                        <span class="hub-card-tag tag-p3">Trang 3</span>
+                        <span class="file-name">index3.html</span>
+                    </div>
+                    <div class="hub-card-title">Phần IV: Bài Tập Viết & Sửa Lỗi Câu</div>
+                    <ul class="hub-card-list">
+                        <li><strong>Bài 7:</strong> Viết câu theo cấu trúc chỉ rõ thành phần.</li>
+                        <li><strong>Bài 8:</strong> Viết câu ghép 4 quan hệ & gạch ranh giới vế.</li>
+                        <li><strong>Bài 9:</strong> Sửa lỗi thành phần câu (thiếu C, thiếu V, thiếu nòng cốt).</li>
+                        <li><strong>Bài 10 & 11:</strong> Sửa lỗi logic, dấu câu & đại từ quy chiếu mơ hồ.</li>
+                    </ul>
+                </div>
+                <a href="index3.html" class="hub-btn">Truy Cập Trang 3 ➔</a>
+            </div>
+
+            <!-- Index 4 -->
+            <div class="hub-card" data-keywords="đoạn văn câu chủ đề diễn dịch quy nạp tổng phân hợp song hành móc xích phép lặp phép thế phép nối bài văn nghị luận luận đề luận điểm bài 12 bài 13 bài 14 bài 15 bài 16 bài 17 bài 18 bài 19 index4">
+                <div>
+                    <div class="hub-card-header">
+                        <span class="hub-card-tag tag-p4">Trang 4</span>
+                        <span class="file-name">index4.html</span>
+                    </div>
+                    <div class="hub-card-title">Phần V & VI: Đoạn Văn & Bài Văn Nghị Luận</div>
+                    <ul class="hub-card-list">
+                        <li><strong>V. Đoạn văn:</strong> 5 cấu trúc (Diễn dịch, Quy nạp, T-P-H...), liên kết nội dung & hình thức. Bài 12-17.</li>
+                        <li><strong>VI. Nghị luận:</strong> Luận đề, luận điểm, lí lẽ, dẫn chứng & quy trình 5 bước.</li>
+                        <li><strong>Bài 18 & 19:</strong> Phân tích đề & Lập dàn ý bài văn nghị luận xã hội.</li>
+                    </ul>
+                </div>
+                <a href="index4.html" class="hub-btn">Truy Cập Trang 4 ➔</a>
+            </div>
+
+            <!-- Index 5 -->
+            <div class="hub-card" data-keywords="lập luận phản biện giả định dàn ý chuẩn 7 tiêu chí kiểm tra bài tập tổng hợp bài văn mẫu 500 chữ lắng nghe đối thoại bài 20 bài 21 bài 22 index5">
+                <div>
+                    <div class="hub-card-header">
+                        <span class="hub-card-tag tag-p5">Trang 5</span>
+                        <span class="file-name">index5.html</span>
+                    </div>
+                    <div class="hub-card-title">Phần VI & VII: Nâng Cao & Bài Văn Mẫu</div>
+                    <ul class="hub-card-list">
+                        <li><strong>Bài 20 & 21:</strong> Viết đoạn lập luận tình huống giả định & Đoạn phản biện.</li>
+                        <li><strong>Dàn ý chi tiết & 7 tiêu chí:</strong> Tự kiểm tra bài viết trước khi nộp.</li>
+                        <li><strong>VII. Bài tập tổng hợp:</strong> Câu 1-3 & Bài văn mẫu hoàn chỉnh 500 chữ (Lắng nghe & đối thoại).</li>
+                    </ul>
+                </div>
+                <a href="index5.html" class="hub-btn">Truy Cập Trang 5 ➔</a>
+            </div>
+
+        </div>
+
+        <!-- Section 2: Bảng Ma Trận Tổng Hợp Toàn Bộ Đề Cương -->
+        <h2 class="section-title">📊 2. BẢNG MA TRẬN NỘI DUNG TỔNG HỢP</h2>
+        <div class="content-box">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Trang / File</th>
+                            <th>Phần Đề Cương</th>
+                            <th>Lí thuyết trọng tâm</th>
+                            <th>Bài tập minh họa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>index1.html</strong></td>
+                            <td>Phần I & II</td>
+                            <td>Chính tả (phụ âm đầu, âm cuối, thanh điệu, viết hoa, biến thể i/y).</td>
+                            <td>Bài 1, Bài 2, Bài 3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>index2.html</strong></td>
+                            <td>Phần III & IV (Lý thuyết)</td>
+                            <td>Nghĩa từ ngữ trong ngữ cảnh, các cặp từ dễ nhầm, cấu trúc câu (C-V, phụ tố, câu đơn, ghép, phức).</td>
+                            <td>Bài 4, Bài 5</td>
+                        </tr>
+                        <tr>
+                            <td><strong>index3.html</strong></td>
+                            <td>Phần IV (Thực hành)</td>
+                            <td>Quy trình viết câu & Quy trình 5 bước sửa lỗi cấu tạo câu.</td>
+                            <td>Bài 7, Bài 8, Bài 9, Bài 10, Bài 11</td>
+                        </tr>
+                        <tr>
+                            <td><strong>index4.html</strong></td>
+                            <td>Phần V & VI (Cơ bản)</td>
+                            <td>5 cấu trúc đoạn văn, 4 phép liên kết hình thức, khái niệm luận đề - luận điểm.</td>
+                            <td>Bài 12 ➔ Bài 19</td>
+                        </tr>
+                        <tr>
+                            <td><strong>index5.html</strong></td>
+                            <td>Phần VI & VII (Nâng cao)</td>
+                            <td>Đoạn lập luận giả định, đoạn phản biện, dàn ý chuẩn 4 bước, 7 tiêu chí tự tra & Bài văn mẫu hoàn chỉnh.</td>
+                            <td>Bài 20 ➔ Bài 22 & Đề tổng hợp 1-4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            Học Viện Phật Giáo Việt Nam (ĐTTX-K.12) • Master Hub Ôn Tập Tiếng Việt Thực Hành 🌟
+        </footer>
+    </div>
+
+    <!-- Script Hiệu Ứng Vũ Trụ Starfield & Bộ Lọc Tìm Kiếm -->
+    <script>
+        const canvas = document.getElementById('space-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let stars = [];
+        const numStars = 190;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initStars();
+        }
+
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < numStars; i++) {
+                stars.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 1.8 + 0.2,
+                    color: ['#ffffff', '#93c5fd', '#38bdf8', '#c084fc', '#fbbf24'][Math.floor(Math.random() * 5)],
+                    alpha: Math.random(),
+                    speed: Math.random() * 0.012 + 0.004
+                });
+            }
+        }
+
+        function drawStars() {
+            ctx.clearRect(0, 0, width, height);
+
+            let grad1 = ctx.createRadialGradient(width * 0.5, height * 0.3, 50, width * 0.5, height * 0.3, width * 0.6);
+            grad1.addColorStop(0, 'rgba(59, 130, 246, 0.15)');
+            grad1.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad1;
+            ctx.fillRect(0, 0, width, height);
+
+            stars.forEach(star => {
+                star.alpha += star.speed;
+                if (star.alpha > 1 || star.alpha < 0) {
+                    star.speed = -star.speed;
+                }
+
+                ctx.save();
+                ctx.globalAlpha = Math.abs(star.alpha);
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = star.color;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = star.color;
+                ctx.fill();
+                ctx.restore();
+            });
+
+            requestAnimationFrame(drawStars);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        drawStars();
+
+        // Search Filter Function
+        function filterCards() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.hub-card');
+
+            cards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords') || '';
+                const text = card.innerText.toLowerCase();
+                if (keywords.includes(input) || text.includes(input)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

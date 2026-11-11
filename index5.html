@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Tiếng Việt Thực Hành - Trang 5: Tổng Ôn & Bài Văn Mẫu Nghị Luận</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050714;
+            --primary-glow: #6366f1;
+            --accent-cyan: #00f2fe;
+            --accent-gold: #fbbf24;
+            --accent-purple: #c084fc;
+            --accent-emerald: #10b981;
+            --accent-pink: #f43f5e;
+            --text-light: #e2e8f0;
+            --glass-bg: rgba(15, 23, 42, 0.78);
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        #space-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at center, #111827 0%, #04050e 100%);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 0 35px rgba(99, 102, 241, 0.25);
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            padding: 0.4rem 1.3rem;
+            background: linear-gradient(90deg, #6366f1 0%, #a855f7 100%);
+            color: #fff;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin: 2.5rem 0 1.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.4rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .card-desc {
+            font-size: 0.93rem;
+            color: #cbd5e1;
+        }
+
+        .content-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .content-part {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        .content-part:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .part-header {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sub-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #38bdf8;
+            margin: 1.2rem 0 0.6rem 0;
+        }
+
+        ul, ol {
+            padding-left: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: #fef08a;
+        }
+
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.12);
+            border-left: 4px solid var(--primary-glow);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #c7d2fe;
+            margin: 1rem 0;
+        }
+
+        .compare-box {
+            background: rgba(16, 185, 129, 0.12);
+            border-left: 4px solid var(--accent-emerald);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #a7f3d0;
+            margin: 1rem 0;
+        }
+
+        .warning-box {
+            background: rgba(244, 63, 94, 0.12);
+            border-left: 4px solid var(--accent-pink);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #fecdd3;
+            margin: 1rem 0;
+        }
+
+        .exercise-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1.08rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .btn-toggle {
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            border: none;
+            color: #fff;
+            padding: 0.45rem 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-top: 0.6rem;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .btn-toggle:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .answer-box {
+            display: none;
+            margin-top: 1rem;
+            padding: 1.2rem;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 10px;
+            color: #d1fae5;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .essay-sample {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin-top: 1rem;
+            color: #e2e8f0;
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+
+        .essay-sample p {
+            margin-bottom: 1rem;
+            text-indent: 1.5rem;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .checklist-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="space-canvas"></canvas>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <span class="badge">TRANG 5 • TỔNG ÔN NÂNG CAO & BÀI VĂN MẪU</span>
+            <h1>ĐỀ CƯƠNG ÔN TẬP TIẾNG VIỆT THỰC HÀNH</h1>
+            <p class="subtitle">HỌC VIỆN PHẬT GIÁO VIỆT NAM (ĐTTX - KHÓA XII)</p>
+            <p style="margin-top:0.5rem; font-size:0.9rem; color:#a5b4fc;">Bài Tập Lập Luận, Phản Biện (Bài 20-22), Dàn Ý Chuẩn & Đề Luyện Tổng Hợp</p>
+        </header>
+
+        <!-- SECTION 1: BÀI TẬP LẬP LUẬN & PHẢN BIỆN (BÀI 20 - 22) -->
+        <h2 class="section-title">🧠 I. THỰC HÀNH LẬP LUẬN, PHẢN BIỆN & LUYỆN VIẾT (BÀI 20 - 22)</h2>
+        <div class="content-box">
+            
+            <!-- BÀI 20 -->
+            <div class="exercise-item">
+                <div class="exercise-title">📝 Bài 20: Viết đoạn lập luận có tình huống giả định</div>
+                <p><em>Yêu cầu:</em> Viết đoạn văn (7–9 câu) làm rõ luận điểm <strong>“Bao dung cần đi cùng trách nhiệm”</strong>. Trong đoạn có một tình huống minh họa được nhận diện rõ là tình huống giả định.</p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-b20')">👁️ Xem Đoạn Văn Mẫu & Phân Tích (Bài 20)</button>
+                <div class="answer-box" id="ans-b20">
+                    <div class="highlight-box">
+                        <strong>Đoạn văn mẫu (8 câu):</strong><br>
+                        "(1) Bao dung cần đi cùng trách nhiệm để tạo cơ hội sửa đổi thực chất. (2) Khi một người mắc lỗi, lời động viên có thể giúp họ bớt mặc cảm. (3) Tuy nhiên, nếu chỉ an ủi mà không chỉ ra hậu quả, chúng ta chưa giúp họ hiểu điều cần thay đổi. (4) <strong>Giả sử</strong> một học viên nhiều lần không hoàn thành phần việc chung, khiến các thành viên khác phải làm thay. (5) Nhóm có thể tìm hiểu khó khăn của học viên ấy và điều chỉnh cách hỗ trợ. (6) Đồng thời, nhóm cần thống nhất nhiệm vụ, thời hạn và yêu cầu người đó khắc phục phần việc còn thiếu. (7) Cách ứng xử này vừa tôn trọng con người vừa bảo vệ trách nhiệm chung. (8) Như vậy, bao dung phát huy ý nghĩa khi giúp người mắc lỗi chủ động thay đổi."
+                    </div>
+                    <p><strong>Phân tích kĩ thuật:</strong> Câu (4) giới thiệu rõ tình huống giả định bằng từ <em>"Giả sử"</em>. Câu (5)-(6) phân tích cách xử lý logic, tôn trọng thực tế mà không tự gán thành số liệu hay sự thật bịa đặt.</p>
+                </div>
+            </div>
+
+            <!-- BÀI 21 -->
+            <div class="exercise-item">
+                <div class="exercise-title">🛡️ Bài 21: Viết đoạn văn phản biện</div>
+                <p><em>Yêu cầu:</em> Viết đoạn văn (4–6 câu) trao đổi với ý kiến <em>“Đã bao dung thì không nên nhắc lại lỗi của người khác”</em>.</p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-b21')">👁️ Xem Đoạn Phản Biện Mẫu (Bài 21)</button>
+                <div class="answer-box" id="ans-b21">
+                    <div class="highlight-box">
+                        <strong>Đoạn văn phản biện mẫu (5 câu):</strong><br>
+                        "(1) Không dùng lỗi cũ để hạ thấp người khác là một biểu hiện của sự tôn trọng. (2) Tuy vậy, điều đó không có nghĩa là phải tránh mọi cuộc trao đổi về lỗi đã xảy ra. (3) Khi hậu quả chưa được khắc phục hoặc hành vi đang tái diễn, việc nhắc lại có căn cứ vẫn cần thiết. (4) Điều cần điều chỉnh là mục đích và cách góp ý: nói rõ việc cần sửa, tránh xúc phạm và tạo cơ hội giải trình. (5) Nhờ đó, sự bao dung có thể đi cùng trách nhiệm thay đổi."
+                    </div>
+                    <p><strong>Điểm cốt lõi:</strong> Ghi nhận mặt đúng của ý kiến đối lập trước (câu 1), sau đó dùng từ nối chuyển tiếp <em>"Tuy vậy"</em> để chỉ ra điều kiện/giới hạn cần bổ sung (câu 2-4).</p>
+                </div>
+            </div>
+
+            <!-- BÀI 22 -->
+            <div class="exercise-item">
+                <div class="exercise-title">📚 Bài 22: Định hướng 3 đề luyện viết bài hoàn chỉnh (500-700 chữ)</div>
+                <div class="checklist-grid">
+                    <div class="checklist-item">
+                        <div>
+                            <strong style="color:var(--accent-gold);">Đề a: Lòng tốt cần đi cùng hiểu biết</strong><br>
+                            • <em>Giải thích:</em> Thiện ý và hiểu biết.<br>
+                            • <em>Phân tích:</em> Giúp đỡ thiếu tìm hiểu có thể không đúng nhu cầu thực tế.<br>
+                            • <em>Hành động:</em> Lắng nghe, hỏi nhu cầu, hỗ trợ trong khả năng và kiểm tra tác động.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <div>
+                            <strong style="color:var(--accent-cyan);">Đề b: Vai trò của tự học đối với học viên</strong><br>
+                            • <em>Giải thích:</em> Chủ động xác định mục tiêu, lựa chọn cách học và tự đánh giá (không đồng nhất tự học với học đơn độc).<br>
+                            • <em>Hành động:</em> Lập lịch, đọc trước, ghi câu hỏi, trao đổi nhóm và tự kiểm tra.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <div>
+                            <strong style="color:var(--accent-pink);">Đề c: Trách nhiệm với lời nói trong sinh hoạt</strong><br>
+                            • <em>Luận điểm:</em> Nói có căn cứ, đúng bối cảnh, tôn trọng người nghe và biết sửa thông tin sai.<br>
+                            • <em>Phân biệt:</em> Góp ý thẳng thắn khác xúc phạm; giữ hòa khí khác im lặng trước cái sai.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECTION 2: DÀN Ý CHI TIẾT & TIÊU CHÍ TỰ KIỂM TRA -->
+        <h2 class="section-title">📐 II. DÀN Ý CHI TIẾT NGHỊ LUẬN & 7 TIÊU CHÍ TỰ KIỂM TRA</h2>
+        <div class="content-box">
+            
+            <div class="content-part">
+                <div class="part-header">1. Dàn Ý Chi Tiết Chuẩn Bài Văn Nghị Luận Xã Hội</div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-title">I. MỞ BÀI</div>
+                        <div class="card-desc">Giới thiệu ngắn gọn vấn đề từ tình huống/thực tế ➔ Nêu chính xác luận đề & định hướng quan điểm. Tránh dẫn dắt quá xa đà.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">II. THÂN BÀI</div>
+                        <div class="card-desc">
+                            1. <strong>Giải thích:</strong> Từ khóa, khái niệm.<br>
+                            2. <strong>Bàn luận & Chứng minh:</strong> 2 luận điểm kèm lí lẽ & dẫn chứng phân tích.<br>
+                            3. <strong>Mở rộng & Phản biện:</strong> Xem xét giới hạn, điều kiện.<br>
+                            4. <strong>Hành động:</strong> Nhận thức & giải pháp cụ thể.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">III. KẾT BÀI</div>
+                        <div class="card-desc">Khẳng định lại quan điểm đã chứng minh ➔ Nêu ý nghĩa hoặc hướng hành động thiết thực. Không lặp nguyên văn mở bài.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-part">
+                <div class="part-header">2. 7 Tiêu Chí Tự Kiểm Tra Bài Viết Trước Khi Nộp</div>
+                <div class="checklist-grid">
+                    <div class="checklist-item"><span>✅</span> <strong>1.</strong> Bài viết đã trả lời đúng và đủ yêu cầu của đề chưa?</div>
+                    <div class="checklist-item"><span>✅</span> <strong>2.</strong> Quan điểm của người viết có rõ ràng và nhất quán không?</div>
+                    <div class="checklist-item"><span>✅</span> <strong>3.</strong> Các luận điểm có phân biệt rõ ràng và cùng làm sáng tỏ luận đề không?</div>
+                    <div class="checklist-item"><span>✅</span> <strong>4.</strong> Mỗi luận điểm đã có đủ lí lẽ và dẫn chứng được phân tích kĩ chưa?</div>
+                    <div class="checklist-item"><span>✅</span> <strong>5.</strong> Phần mở rộng/phản biện có bổ sung chiều sâu cho bài viết không?</div>
+                    <div class="checklist-item"><span>✅</span> <strong>6.</strong> Hướng hành động có cụ thể, khả thi và rõ người - rõ việc không?</div>
+                    <div class="checklist-item"><span>✅</span> <strong>7.</strong> Các đoạn văn liên kết chặt chẽ; đúng chính tả, từ ngữ, dấu câu chưa?</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECTION 3: BÀI LUYỆN TỔNG HỢP (CÂU 1 - CÂU 4) -->
+        <h2 class="section-title">🧪 III. BÀI LUYỆN TỔNG HỢP VÀ HƯỚNG DẪN TỰ ÔN</h2>
+        <div class="content-box">
+            
+            <div class="exercise-item">
+                <div class="exercise-title">Câu 1: Chính Tả & Dùng Từ (Tổng hợp)</div>
+                <p><strong>a)</strong> Sửa câu: <em>“Chúng ta cần giử gìn sự chân thành và chia sẽ kinh nghiệm học tập.”</em></p>
+                <p><strong>b)</strong> Giải nghĩa từ <em>“chiêm nghiệm”</em> trong câu: <em>“Đọc chậm giúp người học có thời gian chiêm nghiệm.”</em></p>
+                <p><strong>c)</strong> Sửa câu: <em>“Khả năng diễn đạt của học viên ngày càng trưởng thành”</em> và giải thích lí do.</p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-th-1')">👁️ Xem Gợi Ý Đáp Án Câu 1</button>
+                <div class="answer-box" id="ans-th-1">
+                    <ul>
+                        <li><strong>a) Sửa chính tả:</strong> <em>“Chúng ta cần <strong>giữ</strong> gìn sự chân thành và <strong>chia sẻ</strong> kinh nghiệm học tập.”</em></li>
+                        <li><strong>b) Giải nghĩa "chiêm nghiệm":</strong> Là suy ngẫm sâu sắc về nội dung đã đọc, liên hệ với trải nghiệm cá nhân để hiểu rõ ý nghĩa bài học.</li>
+                        <li><strong>c) Sửa dùng từ sai:</strong> Từ "trưởng thành" không dùng cho "khả năng diễn đạt".<br>
+                            ➔ <em>Sửa lại:</em> <em>“Khả năng diễn đạt của học viên <strong>ngày càng được cải thiện / nâng cao</strong>.”</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-item">
+                <div class="exercise-title">Câu 2: Viết Và Sửa Câu (Tổng hợp)</div>
+                <p><strong>a)</strong> Viết câu ghép nhượng bộ về việc học.</p>
+                <p><strong>b)</strong> Sửa câu thiếu C: <em>“Qua buổi thảo luận đã giúp học viên hiểu rõ vấn đề.”</em></p>
+                <p><strong>c)</strong> Sửa câu sai chủ thể: <em>“Sau khi đọc xong tài liệu, những câu hỏi được tôi ghi lại.”</em></p>
+                <p><strong>d)</strong> Viết câu có trạng ngữ và phụ chú, chỉ rõ thành phần.</p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-th-2')">👁️ Xem Gợi Ý Đáp Án Câu 2</button>
+                <div class="answer-box" id="ans-th-2">
+                    <ul>
+                        <li><strong>a) Câu ghép nhượng bộ:</strong> <em>“Tuy nội dung bài học khó <strong>/</strong> nhưng các học viên vẫn kiên trì tìm hiểu.”</em></li>
+                        <li><strong>b) Sửa thiếu C:</strong> Bỏ "Qua" ➔ <em>“<strong>Buổi thảo luận</strong> đã giúp học viên hiểu rõ vấn đề.”</em></li>
+                        <li><strong>c) Sửa thống nhất chủ thể:</strong> <em>“Sau khi đọc xong tài liệu, <strong>tôi ghi lại những câu hỏi</strong>.”</em> (tránh để "những câu hỏi" làm chủ thể hành động đọc tài liệu).</li>
+                        <li><strong>d) Câu có trạng ngữ & phụ chú:</strong> <em>“Trong buổi ôn tập, Minh, đại diện của nhóm, đã trình bày kết quả.”</em><br>
+                            ➔ <strong>Trạng ngữ:</strong> Trong buổi ôn tập | <strong>Phụ chú:</strong> đại diện của nhóm.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-item">
+                <div class="exercise-title">Câu 3: Phân Tích Đoạn Văn (Tổng hợp)</div>
+                <p class="highlight-box">
+                    "(1) Tự học giúp học viên chủ động hơn trong quá trình tiếp nhận tri thức. (2) Trước mỗi buổi học, họ có thể đọc tài liệu và ghi lại điều chưa hiểu. (3) Trong giờ thảo luận, những câu hỏi ấy giúp học viên trao đổi vào trọng tâm. (4) Sau buổi học, việc tự kiểm tra giúp họ nhận ra phần kiến thức cần bổ sung. (5) Vì vậy, tự học cần được duy trì trước, trong và sau quá trình học trên lớp."
+                </p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-th-3')">👁️ Xem Gợi Ý Đáp Án Câu 3</button>
+                <div class="answer-box" id="ans-th-3">
+                    <ul>
+                        <li><strong>Tiểu chủ đề:</strong> Vai trò của tự học đối với tính chủ động trong tiếp nhận tri thức.</li>
+                        <li><strong>Cấu trúc: Tổng – Phân – Hợp</strong> (Câu 1 nêu khái quát; Câu 2-4 triển khai theo trình tự thời gian <em>Trước - Trong - Sau</em> buổi học; Câu 5 tổng hợp rút kết luận).</li>
+                        <li><strong>3 Phương tiện liên kết:</strong><br>
+                            • <em>Phép lặp:</em> Lặp "tự học" ở câu 1 và 5.<br>
+                            • <em>Phép thế:</em> Dùng "họ" ở câu 2, 4 thay cho "học viên".<br>
+                            • <em>Quy chiếu/thế từ ngữ:</em> "Những câu hỏi ấy" ở câu 3 quy chiếu về "điều chưa hiểu" ở câu 2.<br>
+                            • <em>Phép nối:</em> Từ nối "Vì vậy" ở câu 5.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECTION 4: BÀI VĂN NGHỊ LUẬN MẪU HOÀN CHỈNH (CÂU 4) -->
+        <h2 class="section-title">📜 IV. BÀI VĂN NGHỊ LUẬN MẪU HOÀN CHỈNH (400 - 500 CHỮ)</h2>
+        <div class="content-box">
+            <div class="exercise-item">
+                <div class="exercise-title">Đề bài Câu 4: Viết bài văn nghị luận bàn về ý kiến: <em>“Lắng nghe là điều kiện quan trọng để đối thoại có ý nghĩa”</em>.</div>
+                
+                <button class="btn-toggle" onclick="toggleAns('ans-essay-full')">👁️ Mở Bằng / Ẩn Bài Văn Mẫu Hoàn Chỉnh</button>
+                
+                <div class="answer-box" id="ans-essay-full" style="display:block;">
+                    <div class="essay-sample">
+                        <p>Trong giao tiếp, có những cuộc trò chuyện giúp con người hiểu nhau hơn, nhưng cũng có những cuộc trao đổi kết thúc bằng bất đồng. Khác biệt ấy nhiều khi bắt nguồn từ cách chúng ta tiếp nhận lời nói của nhau. Bởi vậy, <em>“Lắng nghe là điều kiện quan trọng để đối thoại có ý nghĩa”</em> là một nhận định rất đáng suy ngẫm.</p>
+                        
+                        <p>Lắng nghe là sự chú ý tâm trí để hiểu đúng nội dung và cách nhìn của người nói. Đối thoại là quá trình trao đổi qua lại nhằm tìm hiểu lẫn nhau hoặc giải quyết một vấn đề chung. Một cuộc đối thoại có ý nghĩa khi nó giúp các bên hiểu rõ điều đang bàn, nhận ra điểm chung và khác biệt, dù chưa hoàn toàn đồng thuận ngay lập tức.</p>
+
+                        <p>Lắng nghe giúp mỗi người hiểu đúng ý kiến của người khác trước khi đưa ra phản hồi. Nếu chỉ nghe vài từ rồi vội kết luận, chúng ta rất dễ hiểu sai thông điệp và biến cuộc trao đổi thành tranh cãi. Ngược lại, khi kiên nhẫn nghe và hỏi lại điều chưa rõ, người nghe có cơ hội nhận biết lí do đằng sau một nhận định. Họ cũng có thể phát hiện điểm hợp lý trong ý kiến khác với mình. Vì vậy, lắng nghe tạo cơ sở vững chắc cho sự phản hồi đúng trọng tâm và có căn cứ.</p>
+
+                        <p>Thực tế, chuỗi đối thoại Malibongwe do Quỹ Nelson Mandela tổ chức đã tạo không gian trao đổi thẳng thắn giữa những người từng tham gia đấu tranh vì tự do và công chúng thuộc nhiều thế hệ. Các cuộc trao đổi diễn ra mạnh mẽ nhưng không mang thái độ hằn học; người tham gia chia sẻ kinh nghiệm và người nghe đáp lại bằng sự cởi mở. Dẫn chứng này cho thấy lắng nghe không loại bỏ khác biệt mà giúp khác biệt được bày tỏ trong sự tôn trọng.</p>
+
+                        <p>Tuy nhiên, lắng nghe không buộc mỗi người phải đồng ý với mọi ý kiến. Người nghe vẫn cần kiểm chứng thông tin và phản biện bằng lí lẽ. Hơn nữa, đối thoại khó đạt kết quả nếu các bên thiếu sự trung thực. Vì thế, mỗi người cần tránh ngắt lời tùy tiện, nhắc đúng ý đối phương trước khi phản hồi và sẵn sàng sửa nhận định chưa phù hợp.</p>
+
+                        <p>Đối thoại có ý nghĩa luôn cần sự chủ động từ cả người nói lẫn người nghe. Biết lắng nghe giúp con người hiểu nhau, tôn trọng khác biệt và cùng tìm hướng giải quyết vấn đề. Rèn luyện khả năng ấy là việc làm cần thiết trong học tập và đời sống hàng ngày.</p>
+                    </div>
+
+                    <div class="highlight-box" style="margin-top:1.2rem;">
+                        <strong>🔍 Chú thích phân tích đoạn mẫu trong bài:</strong><br>
+                        • <strong>Đoạn được chọn:</strong> Đoạn 3 <em>("Lắng nghe giúp mỗi người hiểu đúng ý kiến...")</em>.<br>
+                        • <strong>Mô hình cấu trúc: Tổng – Phân – Hợp</strong> (Câu 1 nêu câu chủ đề đầu; các câu giữa phân tích cơ chế; câu cuối dùng <em>"Vì vậy"</em> tổng hợp bài học).<br>
+                        • <strong>2 Phương tiện liên kết:</strong> Phép lặp từ <em>"Lắng nghe"</em> (câu 1, 3); Phép thế <em>"Họ"</em> ở câu 4 thay cho <em>"người nghe"</em> ở câu 3; Phép nối <em>"Vì vậy"</em> ở câu cuối.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Học Viện Phật Giáo Việt Nam (ĐTTX-K.12) • Hoàn Thành Trọn Bộ Đề Cương Ôn Tập Tiếng Việt Thực Hành 🌟
+        </footer>
+    </div>
+
+    <!-- Script Hiệu Ứng Vũ Trụ Starfield -->
+    <script>
+        const canvas = document.getElementById('space-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let stars = [];
+        const numStars = 180;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initStars();
+        }
+
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < numStars; i++) {
+                stars.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 1.8 + 0.2,
+                    color: ['#ffffff', '#c7d2fe', '#a855f7', '#6366f1', '#fbbf24'][Math.floor(Math.random() * 5)],
+                    alpha: Math.random(),
+                    speed: Math.random() * 0.012 + 0.004
+                });
+            }
+        }
+
+        function drawStars() {
+            ctx.clearRect(0, 0, width, height);
+
+            let grad1 = ctx.createRadialGradient(width * 0.5, height * 0.3, 50, width * 0.5, height * 0.3, width * 0.55);
+            grad1.addColorStop(0, 'rgba(99, 102, 241, 0.18)');
+            grad1.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad1;
+            ctx.fillRect(0, 0, width, height);
+
+            let grad2 = ctx.createRadialGradient(width * 0.75, height * 0.75, 50, width * 0.75, height * 0.75, width * 0.45);
+            grad2.addColorStop(0, 'rgba(168, 85, 247, 0.12)');
+            grad2.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad2;
+            ctx.fillRect(0, 0, width, height);
+
+            stars.forEach(star => {
+                star.alpha += star.speed;
+                if (star.alpha > 1 || star.alpha < 0) {
+                    star.speed = -star.speed;
+                }
+
+                ctx.save();
+                ctx.globalAlpha = Math.abs(star.alpha);
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = star.color;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = star.color;
+                ctx.fill();
+                ctx.restore();
+            });
+
+            requestAnimationFrame(drawStars);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        drawStars();
+
+        function toggleAns(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === "block" || el.style.display === "") {
+                el.style.display = "none";
+            } else {
+                el.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

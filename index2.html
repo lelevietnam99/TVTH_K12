@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Tiếng Việt Thực Hành - Trang 2: Từ Ngữ & Cấu Trúc Câu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050714;
+            --primary-glow: #8b5cf6;
+            --accent-cyan: #00f2fe;
+            --accent-gold: #fbbf24;
+            --accent-purple: #c084fc;
+            --accent-emerald: #10b981;
+            --accent-pink: #f43f5e;
+            --text-light: #e2e8f0;
+            --glass-bg: rgba(15, 23, 42, 0.78);
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        #space-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at center, #1e1b4b 0%, #04050e 100%);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 0 35px rgba(139, 92, 246, 0.25);
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            padding: 0.4rem 1.3rem;
+            background: linear-gradient(90deg, #8b5cf6 0%, #c084fc 100%);
+            color: #fff;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #ddd6fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin: 2.5rem 0 1.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.4rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 10px 25px rgba(192, 132, 252, 0.2);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .card-desc {
+            font-size: 0.93rem;
+            color: #cbd5e1;
+        }
+
+        .content-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .content-part {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        .content-part:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .part-header {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sub-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #38bdf8;
+            margin: 1.2rem 0 0.6rem 0;
+        }
+
+        ul, ol {
+            padding-left: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: #fef08a;
+        }
+
+        .highlight-box {
+            background: rgba(139, 92, 246, 0.15);
+            border-left: 4px solid var(--primary-glow);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #ddd6fe;
+            margin: 1rem 0;
+        }
+
+        .compare-box {
+            background: rgba(16, 185, 129, 0.12);
+            border-left: 4px solid var(--accent-emerald);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #a7f3d0;
+            margin: 1rem 0;
+        }
+
+        .warning-box {
+            background: rgba(244, 63, 94, 0.12);
+            border-left: 4px solid var(--accent-pink);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #fecdd3;
+            margin: 1rem 0;
+        }
+
+        /* Bài tập thực hành & Quiz */
+        .exercise-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 1.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #6ee7b7;
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .btn-toggle {
+            background: linear-gradient(90deg, #c084fc, #38bdf8);
+            border: none;
+            color: #000;
+            padding: 0.45rem 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-top: 0.6rem;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .btn-toggle:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .answer-box {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem 1.2rem;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 10px;
+            color: #a7f3d0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Table styles */
+        .table-container {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.93rem;
+        }
+
+        th, td {
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            text-align: left;
+        }
+
+        th {
+            background: rgba(139, 92, 246, 0.25);
+            color: var(--accent-cyan);
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="space-canvas"></canvas>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <span class="badge">TRANG 2 • TIẾNG VIỆT THỰC HÀNH</span>
+            <h1>ĐỀ CƯƠNG ÔN TẬP TIẾNG VIỆT THỰC HÀNH</h1>
+            <p class="subtitle">HỌC VIỆN PHẬT GIÁO VIỆT NAM (ĐTTX - KHÓA XII)</p>
+            <p style="margin-top:0.5rem; font-size:0.9rem; color:#a78bfa;">Phần Từ Ngữ (Bài tập 4-5) & Phần IV: Câu, Cách Viết Câu, Sửa Lỗi Câu</p>
+        </header>
+
+        <!-- SECTION III (TIẾP THEO): BÀI TẬP THỰC HÀNH TỪ NGỮ -->
+        <h2 class="section-title">✏️ III. BÀI TẬP THỰC HÀNH DÙNG TỪ (BÀI 4 & BÀI 5)</h2>
+        <div class="content-box">
+            
+            <!-- Bài 4 -->
+            <div class="exercise-item">
+                <div class="exercise-title">Bài 4: Giải nghĩa từ trong ngữ cảnh</div>
+                <p><strong>a)</strong> <em>“Bao dung giúp ta cảm thông nhưng không dung túng cho hành vi gây hại.”</em> ➔ Giải nghĩa: <strong>bao dung</strong>, <strong>dung túng</strong>.</p>
+                <p><strong>b)</strong> <em>“Sau buổi học, mỗi người cần chiêm nghiệm điều đã tiếp nhận.”</em> ➔ Giải nghĩa: <strong>chiêm nghiệm</strong>.</p>
+                <p><strong>c)</strong> <em>“Người học cần khiêm nhường trước tri thức và dấn thân vào công việc có ích.”</em> ➔ Giải nghĩa: <strong>khiêm nhường</strong>, <strong>dấn thân</strong>.</p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-tu-4')">👁️ Xem Gợi Ý Đáp Án Bài 4</button>
+                <div class="answer-box" id="ans-tu-4">
+                    <strong>Gợi ý đáp án chi tiết:</strong>
+                    <ul>
+                        <li><strong>Bao dung:</strong> Là rộng lòng cảm thông, tha thứ và tạo cơ hội cho người mắc lỗi sửa đổi.</li>
+                        <li><strong>Dung túng:</strong> Là dễ dãi, bỏ qua hoặc bao che, khiến hành vi sai có điều kiện tiếp diễn.</li>
+                        <li><strong>Chiêm nghiệm:</strong> Là suy ngẫm sâu để hiểu ý nghĩa và rút ra bài học cho bản thân từ những gì đã tiếp nhận/trải nghiệm.</li>
+                        <li><strong>Khiêm nhường:</strong> Là không tự đề cao, biết tôn trọng người khác và ý thức rõ giới hạn của mình.</li>
+                        <li><strong>Dấn thân:</strong> Là chủ động dành công sức, chấp nhận khó khăn để thực hiện mục đích có ý nghĩa.</li>
+                    </ul>
+                    <div class="highlight-box">📌 <em>Lưu ý khi làm bài:</em> Cần diễn đạt rõ thành từng câu giải nghĩa nguyên nét ngữ cảnh, không chỉ dùng một từ đồng nghĩa đơn lẻ để thay thế.</div>
+                </div>
+            </div>
+
+            <!-- Bài 5 -->
+            <div class="exercise-item">
+                <div class="exercise-title">Bài 5: Phát hiện và sửa lỗi dùng từ</div>
+                <p>a) Sau thời gian học tập, vốn hiểu biết của tôi ngày càng <u>trưởng thành</u>.</p>
+                <p>b) Giảng viên <u>truyền đạt</u> lòng nhân ái qua câu chuyện.</p>
+                <p>c) Mỗi người cần khắc phục <u>yếu điểm</u> của bản thân.</p>
+                <p>d) <u>Khoảng xấp xỉ</u> một trăm học viên tham dự.</p>
+                <p>e) Chúng ta cần <u>luôn luôn, thường xuyên</u> đọc lại bài viết.</p>
+                <p>f) Em <u>xin yêu cầu</u> thầy giải thích thêm nội dung này.</p>
+
+                <button class="btn-toggle" onclick="toggleAns('ans-tu-5')">👁️ Xem Gợi Ý Đáp Án Bài 5</button>
+                <div class="answer-box" id="ans-tu-5">
+                    <strong>Gợi ý đáp án & Giải thích lỗi:</strong>
+                    <ul>
+                        <li><strong>a) Sai khả năng kết hợp từ:</strong> Từ "trưởng thành" không kết hợp với "vốn hiểu biết".<br>
+                            ➔ <em>Sửa lại:</em> "Sau thời gian học tập, vốn hiểu biết của tôi <strong>ngày càng sâu rộng / phong phú</strong>."</li>
+                        <li><strong>b) Sai từ theo đối tượng kết hợp:</strong> "Truyền đạt" thường dùng với thông tin/kiến thức, không đi với "lòng nhân ái".<br>
+                            ➔ <em>Sửa lại:</em> "Giảng viên <strong>khơi gợi / lan tỏa</strong> lòng nhân ái qua câu chuyện."</li>
+                        <li><strong>c) Lẫn lộn từ gần âm/nghĩa (nhầm "yếu điểm" với "điểm yếu"):</strong> "Yếu điểm" = điểm quan trọng; "Điểm yếu" = khuyết điểm.<br>
+                            ➔ <em>Sửa lại:</em> "Mỗi người cần khắc phục những <strong>điểm yếu</strong> của bản thân."</li>
+                        <li><strong>d) Dùng từ trùng lặp (chồng từ ước lượng):</strong> "Khoảng" và "xấp xỉ" cùng mang nét nghĩa ước lượng.<br>
+                            ➔ <em>Sửa lại:</em> "<strong>Khoảng</strong> một trăm học viên tham dự." (hoặc "<strong>Xấp xỉ</strong> một trăm học viên tham dự.")</li>
+                        <li><strong>e) Trùng ý tần suất:</strong> "Luôn luôn" và "thường xuyên" bị lặp nghĩa.<br>
+                            ➔ <em>Sửa lại:</em> "Chúng ta cần <strong>thường xuyên</strong> đọc lại bài viết."</li>
+                        <li><strong>f) Sai phong cách & quan hệ giao tiếp:</strong> Từ "yêu cầu" thiếu lịch sự trong giao tiếp học viên gửi giảng viên.<br>
+                            ➔ <em>Sửa lại:</em> "Em <strong>kính mong / xin phép kính đề nghị</strong> thầy giải thích thêm nội dung này."</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECTION IV: CÂU VÀ CÁCH VIẾT CÂU, SỬA LỖI CÂU -->
+        <h2 class="section-title">🔮 IV. CÂU, CÁCH VIẾT CÂU VÀ SỬA LỖI CÂU</h2>
+        <div class="content-box">
+            
+            <div class="content-part">
+                <div class="part-header">1. Lí Thuyết Trọng Tâm</div>
+
+                <!-- a -->
+                <div class="sub-header">a) Câu và các thành phần thường gặp trong câu</div>
+                <p>Câu là đơn vị giao tiếp diễn đạt một nội dung tương đối trọn vẹn trong ngữ cảnh cụ thể.</p>
+                <ul>
+                    <li><strong>Nòng cốt chính:</strong>
+                        <ul>
+                            <li><strong>Chủ ngữ (C):</strong> Nêu đối tượng được nói đến trong câu.</li>
+                            <li><strong>Vị ngữ (V):</strong> Nêu hoạt động, trạng thái, đặc điểm hoặc quan hệ của đối tượng.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Câu đặc biệt & Câu rút gọn:</strong> Có thể không có đủ 2 thành phần C-V nhưng vẫn có giá trị giao tiếp trọn vẹn trong ngữ cảnh ➔ <em>Không kết luận mọi câu thiếu C hoặc V đều sai.</em></li>
+                    <li><strong>Thành phần phụ & Chức năng:</strong>
+                        <ul>
+                            <li><strong>Trạng ngữ:</strong> Bổ sung hoàn cảnh (thời gian, nơi chốn, nguyên nhân, mục đích, phương tiện).</li>
+                            <li><strong>Thành phần phụ chú:</strong> Giải thích thêm cho một thành phần hoặc nội dung trong câu.</li>
+                            <li><strong>Tình thái ngữ:</strong> Thể hiện cách đánh giá, thái độ của người nói (chẳng hạn: <em>có lẽ, chắc chắn, hình như...</em>).</li>
+                            <li><strong>Chuyển tiếp ngữ:</strong> Nối mạch nghĩa với nội dung phía trước (chẳng hạn: <em>tuy nhiên, hơn nữa, vì vậy, do đó...</em>). Cần dùng đúng quan hệ nghĩa.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- b -->
+                <div class="sub-header">b) Các kiểu cấu tạo câu cần thực hành</div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-title">1. Câu đơn</div>
+                        <div class="card-desc">Chỉ có <strong>một cụm C – V</strong> làm nòng cốt câu.<br><em>Ví dụ:</em> [Học viên]<sub>C</sub> / [đọc tài liệu]<sub>V</sub>.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">2. Câu ghép</div>
+                        <div class="card-desc">Có từ <strong>hai cụm C – V độc lập trở lên</strong>, các cụm không bao chứa nhau.<br><em>Ví dụ:</em> Vì [học viên]<sub>C1</sub> / [chuẩn bị kĩ]<sub>V1</sub> nên [buổi thảo luận]<sub>C2</sub> / [diễn ra thuận lợi]<sub>V2</sub>.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">3. Câu phức</div>
+                        <div class="card-desc">Có <strong>cụm C – V làm thành phần</strong> của câu hoặc của cụm từ (quan hệ bao chứa).<br><em>Ví dụ:</em> [[Mọi người]<sub>c</sub> / [hợp tác]<sub>v</sub>]<sub>C lớn</sub> / [giúp công việc tiến triển]<sub>V lớn</sub>.</div>
+                    </div>
+                </div>
+
+                <!-- c -->
+                <div class="sub-header">c) Các quan hệ nghĩa thường gặp trong câu ghép</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Quan Hệ Nghĩa</th>
+                                <th>Cặp Từ Nối / Quan Hệ Từ</th>
+                                <th>Ví Dụ Minh Họa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Nguyên nhân – Kết quả</strong></td>
+                                <td><code>vì… nên…</code>, <code>do… cho nên…</code></td>
+                                <td>Vì chuẩn bị chu đáo nên bài thuyết trình đạt kết quả cao.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Điều kiện – Kết quả</strong></td>
+                                <td><code>nếu… thì…</code>, <code>hễ… thì…</code></td>
+                                <td>Nếu rèn luyện thường xuyên thì kỹ năng viết sẽ nâng cao.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nhượng bộ (Tương phản)</strong></td>
+                                <td><code>tuy / mặc dù… nhưng…</code></td>
+                                <td>Mặc dù đề tài khó nhưng học viên vẫn hoàn thành đúng hạn.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lựa chọn</strong></td>
+                                <td><code>hoặc… hoặc…</code>, <code>hay là…</code></td>
+                                <td>Học viên có thể nộp bài trực tiếp hoặc nộp qua thư điện tử.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tăng tiến</strong></td>
+                                <td><code>không những… mà còn…</code></td>
+                                <td>Anh ấy không những viết đúng chính tả mà còn dùng từ rất tinh tế.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tương ứng</strong></td>
+                                <td><code>càng… càng…</code></td>
+                                <td>Đọc sách càng nhiều, vốn từ của chúng ta càng phong phú.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- d -->
+                <div class="sub-header">d) Những lỗi câu cần nhận diện & sửa đổi</div>
+                <div class="warning-box">
+                    <strong>Các lỗi cấu tạo câu phổ biến:</strong>
+                    <ul>
+                        <li><strong>Thiếu chủ ngữ:</strong> Dùng cụm bắt đầu bằng <em>qua, bằng, với, về…</em> làm trạng ngữ nhưng không có chủ thể cho vị ngữ.</li>
+                        <li><strong>Thiếu vị ngữ:</strong> Chỉ nêu một cụm danh từ và phần giải thích mà chưa có vị ngữ hoàn chỉnh.</li>
+                        <li><strong>Thiếu cả nòng cốt (C-V):</strong> Câu chỉ chứa trạng ngữ chỉ mục đích hoặc hoàn cảnh mà chưa tạo thành phát ngôn trọn vẹn.</li>
+                        <li><strong>Sai quan hệ chủ thể:</strong> Chủ thể ngầm hiểu ở phần trạng ngữ không thống nhất với chủ thể trong nòng cốt câu.</li>
+                        <li><strong>Sai quan hệ logic:</strong> Dùng từ nối không đúng logic, so sánh hoặc liệt kê các đối tượng không cùng phương diện.</li>
+                        <li><strong>Mơ hồ:</strong> Sắp xếp từ hoặc dùng đại từ khiến câu tạo ra nhiều cách hiểu ngoài ý định.</li>
+                        <li><strong>Sai dấu câu:</strong> Tách câu làm đứt quan hệ điều kiện - kết quả; thiếu dấu phân cách cần thiết; dùng dấu hỏi cho câu trần thuật thuật lại lời hỏi.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quy trình -->
+            <div class="content-part">
+                <div class="part-header">2. Quy Trình Viết Câu & Quy Trình Sửa Lỗi Câu</div>
+                
+                <div class="compare-box">
+                    <strong>🚀 5 Bước Viết Câu Chuẩn:</strong><br>
+                    1. Xác định nội dung cần diễn đạt ➔ 2. Lựa chọn cấu trúc câu thích hợp ➔ 3. Điền đầy đủ các thành phần (nòng cốt & phụ) ➔ 4. Kiểm tra nòng cốt C-V và quan hệ nghĩa ➔ 5. Đặt dấu câu chính xác.
+                </div>
+
+                <div class="highlight-box">
+                    <strong>🛠️ 5 Bước Sửa Lỗi Câu Chuẩn:</strong><br>
+                    1. Đọc câu để hiểu ý đồ diễn đạt ➔ 2. Phân tích các thành phần câu ➔ 3. Gọi tên loại lỗi có căn cứ rõ ràng ➔ 4. Sửa vừa đủ (giữ nguyên ý gốc) ➔ 5. Đối chiếu lại với câu gốc để đảm bảo tính chuẩn xác.<br>
+                    ⚠️ <em>Chú ý:</em> Không tự ý thêm địa điểm, nguyên nhân hoặc kết quả mới chỉ để biến thành một câu đúng.
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            Học Viện Phật Giáo Việt Nam (ĐTTX-K.12) • Đề Cương Ôn Tập Tiếng Việt Thực Hành — Trang 2 🌟
+        </footer>
+    </div>
+
+    <!-- Canvas Starfield Script -->
+    <script>
+        const canvas = document.getElementById('space-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let stars = [];
+        const numStars = 180;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initStars();
+        }
+
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < numStars; i++) {
+                stars.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 1.8 + 0.2,
+                    color: ['#ffffff', '#c084fc', '#38bdf8', '#ddd6fe', '#fbbf24'][Math.floor(Math.random() * 5)],
+                    alpha: Math.random(),
+                    speed: Math.random() * 0.012 + 0.004
+                });
+            }
+        }
+
+        function drawStars() {
+            ctx.clearRect(0, 0, width, height);
+
+            let grad1 = ctx.createRadialGradient(width * 0.4, height * 0.3, 50, width * 0.4, height * 0.3, width * 0.55);
+            grad1.addColorStop(0, 'rgba(139, 92, 246, 0.18)');
+            grad1.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad1;
+            ctx.fillRect(0, 0, width, height);
+
+            let grad2 = ctx.createRadialGradient(width * 0.75, height * 0.75, 50, width * 0.75, height * 0.75, width * 0.45);
+            grad2.addColorStop(0, 'rgba(0, 242, 254, 0.12)');
+            grad2.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad2;
+            ctx.fillRect(0, 0, width, height);
+
+            stars.forEach(star => {
+                star.alpha += star.speed;
+                if (star.alpha > 1 || star.alpha < 0) {
+                    star.speed = -star.speed;
+                }
+
+                ctx.save();
+                ctx.globalAlpha = Math.abs(star.alpha);
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = star.color;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = star.color;
+                ctx.fill();
+                ctx.restore();
+            });
+
+            requestAnimationFrame(drawStars);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        drawStars();
+
+        function toggleAns(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === "block") {
+                el.style.display = "none";
+            } else {
+                el.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

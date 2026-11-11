@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Tiếng Việt Thực Hành - Trang 4: Đoạn Văn & Văn Bản Nghị Luận</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050714;
+            --primary-glow: #ec4899;
+            --accent-cyan: #00f2fe;
+            --accent-gold: #fbbf24;
+            --accent-purple: #c084fc;
+            --accent-emerald: #10b981;
+            --accent-pink: #f43f5e;
+            --text-light: #e2e8f0;
+            --glass-bg: rgba(15, 23, 42, 0.78);
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        #space-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at center, #2d0619 0%, #04050e 100%);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 5rem 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 0 35px rgba(236, 72, 153, 0.25);
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            padding: 0.4rem 1.3rem;
+            background: linear-gradient(90deg, #ec4899 0%, #f43f5e 100%);
+            color: #fff;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #fbcfe8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin: 2.5rem 0 1.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.4rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-pink);
+            box-shadow: 0 10px 25px rgba(244, 63, 94, 0.2);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .card-desc {
+            font-size: 0.93rem;
+            color: #cbd5e1;
+        }
+
+        .content-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .content-part {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        .content-part:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .part-header {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sub-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #38bdf8;
+            margin: 1.2rem 0 0.6rem 0;
+        }
+
+        ul, ol {
+            padding-left: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: #fef08a;
+        }
+
+        .highlight-box {
+            background: rgba(236, 72, 153, 0.12);
+            border-left: 4px solid var(--primary-glow);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #fbcfe8;
+            margin: 1rem 0;
+        }
+
+        .compare-box {
+            background: rgba(192, 132, 252, 0.12);
+            border-left: 4px solid var(--accent-purple);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #e9d5ff;
+            margin: 1rem 0;
+        }
+
+        .warning-box {
+            background: rgba(244, 63, 94, 0.12);
+            border-left: 4px solid var(--accent-pink);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            color: #fecdd3;
+            margin: 1rem 0;
+        }
+
+        .exercise-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1.08rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .btn-toggle {
+            background: linear-gradient(90deg, #ec4899, #f43f5e);
+            border: none;
+            color: #fff;
+            padding: 0.45rem 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-top: 0.6rem;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .btn-toggle:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        .answer-box {
+            display: none;
+            margin-top: 1rem;
+            padding: 1.2rem;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 10px;
+            color: #d1fae5;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="space-canvas"></canvas>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <span class="badge">TRANG 4 • ĐOẠN VĂN & VĂN BẢN NGHỊ LUẬN</span>
+            <h1>ĐỀ CƯƠNG ÔN TẬP TIẾNG VIỆT THỰC HÀNH</h1>
+            <p class="subtitle">HỌC VIỆN PHẬT GIÁO VIỆT NAM (ĐTTX - KHÓA XII)</p>
+            <p style="margin-top:0.5rem; font-size:0.9rem; color:#fbcfe8;">Phần V: Chủ Đề, Cấu Trúc, Liên Kết Đoạn Văn & Phần VI: Viết Văn Bản Nghị Luận</p>
+        </header>
+
+        <!-- PHẦN V: CHỦ ĐỀ CẤU TRÚC VÀ LIÊN KẾT ĐOẠN VĂN -->
+        <h2 class="section-title">🧩 V. CHỦ ĐỀ, CẤU TRÚC VÀ LIÊN KẾT ĐOẠN VĂN</h2>
+        <div class="content-box">
+            
+            <div class="content-part">
+                <div class="part-header">1. Lí Thuyết Trọng Tâm (Đoạn Văn)</div>
+
+                <div class="sub-header">a) Chủ đề và câu chủ đề</div>
+                <p><strong>Chủ đề:</strong> Là nội dung trung tâm mà văn bản tập trung thể hiện. Xác định chủ đề cần chỉ rõ đối tượng và điều được khẳng định về đối tượng đó (Ví dụ: <em>"Đọc sách"</em> mới là đề tài rộng; <em>"Đọc sách có phương pháp giúp phát triển tư duy độc lập"</em> mới là chủ đề cụ thể).</p>
+                <p><strong>Câu chủ đề:</strong> Diễn đạt khái quát nội dung trung tâm; có thể đứng ở đầu, ở cuối hoặc hai câu khái quát đầu - cuối. Đoạn văn cũng có thể không có câu chủ đề hiển ngôn.</p>
+
+                <div class="sub-header">b) Các cấu trúc đoạn văn cần nhớ</div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-title">1. Diễn dịch</div>
+                        <div class="card-desc">Câu đầu nêu ý khái quát ➔ Các câu sau giải thích, chứng minh.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">2. Quy nạp</div>
+                        <div class="card-desc">Các câu đầu triển khai lí lẽ/dẫn chứng ➔ Câu cuối rút ra khái quát.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">3. Tổng – Phân – Hợp</div>
+                        <div class="card-desc">Câu đầu nêu khái quát ➔ Phần giữa phân tích ➔ Câu cuối tổng hợp nâng cao.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">4. Song hành</div>
+                        <div class="card-desc">Các câu ngang bậc cùng triển khai chủ đề (thường không có câu chủ đề hiển ngôn).</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">5. Móc xích</div>
+                        <div class="card-desc">Nội dung câu sau nối tiếp yếu tố/ý của câu trước tạo mạch liên kết.</div>
+                    </div>
+                </div>
+
+                <div class="sub-header">c) Liên kết nội dung & Phương tiện liên kết hình thức</div>
+                <ul>
+                    <li><strong>Liên kết chủ đề & Logic:</strong> Các câu cùng hướng về một đối tượng trung tâm và được sắp xếp theo trình tự hợp lí (thời gian, nguyên nhân - kết quả, vấn đề - giải pháp).</li>
+                    <li><strong>Phép lặp:</strong> Lặp từ ngữ có chủ đích để duy trì đối tượng.</li>
+                    <li><strong>Phép thế:</strong> Dùng đại từ/từ thay thế (phải dẫn rõ từ thay thế cho từ nào).</li>
+                    <li><strong>Phép nối:</strong> Dùng từ nối (<em>tuy nhiên, vì vậy, hơn nữa...</em>).</li>
+                    <li><strong>Đồng nghĩa, trái nghĩa, liên tưởng:</strong> Dùng nhóm từ cùng trường nghĩa để nối mạch.</li>
+                </ul>
+
+                <div class="sub-header">d) 6 Bước quy trình phân tích đoạn văn</div>
+                <div class="compare-box">
+                    <strong>1.</strong> Đọc toàn đoạn, ghi nội dung trung tâm ➔ <strong>2.</strong> Xác định câu chủ đề và vị trí ➔ <strong>3.</strong> Phân tích chức năng từng câu ➔ <strong>4.</strong> Kết luận mô hình cấu trúc ➔ <strong>5.</strong> Dẫn đúng phương tiện liên kết & tác dụng ➔ <strong>6.</strong> Kiểm tra lỗi lạc chủ đề hay mơ hồ quy chiếu.
+                </div>
+            </div>
+
+            <!-- BÀI TẬP PHẦN V -->
+            <div class="content-part">
+                <div class="part-header">2. Bài Tập Thực Hành Minh Họa (Đoạn Văn: Bài 12 - Bài 17)</div>
+
+                <!-- Bài 12 -->
+                <div class="exercise-item">
+                    <div class="exercise-title">Bài 12: Phân tích chủ đề, cấu trúc và liên kết đoạn văn</div>
+                    <p class="highlight-box">
+                        "(1) Đọc sách có phương pháp giúp người học phát triển tư duy độc lập. (2) Khi đặt câu hỏi trong lúc đọc, người học không tiếp nhận thông tin một cách thụ động. (3) Khi đối chiếu nhiều nguồn, họ biết kiểm chứng các lập luận. (4) Khi ghi chú bằng ngôn ngữ của mình, họ biến điều đã đọc thành hiểu biết cá nhân. (5) Vì thế, đọc đúng cách vừa mở rộng kiến thức vừa rèn năng lực suy nghĩ."
+                    </p>
+                    <p><strong>Yêu cầu:</strong> a) Nêu tiểu chủ đề. &nbsp; b) Xác định câu chủ đề, cấu trúc & chức năng từng câu. &nbsp; c) Chỉ ra 3 phương tiện liên kết và tác dụng.</p>
+
+                    <button class="btn-toggle" onclick="toggleAns('ans-b12')">👁️ Xem Gợi Ý Đáp Án Bài 12</button>
+                    <div class="answer-box" id="ans-b12">
+                        <ul>
+                            <li><strong>a) Tiểu chủ đề:</strong> Vai trò của việc đọc sách có phương pháp đối với sự phát triển tư duy độc lập.</li>
+                            <li><strong>b) Cấu trúc: Tổng – Phân – Hợp</strong><br>
+                                • <em>Câu (1):</em> Câu chủ đề đầu, nêu ý khái quát.<br>
+                                • <em>Câu (2)-(4):</em> Phân tích cụ thể các biểu hiện (đặt câu hỏi, đối chiếu nguồn, ghi chú bằng ngôn ngữ riêng).<br>
+                                • <em>Câu (5):</em> Câu chủ đề cuối, tổng hợp và mở rộng kết luận.
+                            </li>
+                            <li><strong>c) 3 Phương tiện liên kết:</strong><br>
+                                • <em>Phép lặp:</em> Lặp "người học" ở câu (1) và (2) ➔ duy trì đối tượng trung tâm.<br>
+                                • <em>Phép thế:</em> Dùng "họ" ở câu (3), (4) thay cho "người học" ➔ tránh lặp từ rườm rà.<br>
+                                • <em>Phép nối:</em> Từ nối "Vì thế" ở câu (5) ➔ biểu thị quan hệ kết luận logic.<br>
+                                • <em>Cấu trúc song song:</em> Cấu trúc "Khi..." lặp lại ở câu (2), (3), (4).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bài 13 -->
+                <div class="exercise-item">
+                    <div class="exercise-title">Bài 13: Phân biệt đề tài với chủ đề & Chuyển đổi cấu trúc đoạn</div>
+                    <p>Đánh giá hai câu trả lời về đoạn ở Bài 12: a) <em>"Đoạn viết về sách."</em> &nbsp; b) <em>"Đoạn làm rõ việc đọc có phương pháp giúp người học suy nghĩ độc lập."</em> Sau đó hãy chuyển đoạn sang cấu trúc <strong>Quy nạp</strong>.</p>
+
+                    <button class="btn-toggle" onclick="toggleAns('ans-b13')">👁️ Xem Gợi Ý Đáp Án Bài 13</button>
+                    <div class="answer-box" id="ans-b13">
+                        <ul>
+                            <li><strong>Nhận xét:</strong> Câu a mới nêu đề tài quá rộng; câu b xác định đúng nội dung trung tâm.</li>
+                            <li><strong>Chuyển sang đoạn Quy nạp:</strong> Đưa các câu phân tích lên trước và chốt bằng câu kết luận khái quát ở cuối.<br>
+                                <em>"Khi đặt câu hỏi trong lúc đọc, người học không tiếp nhận thông tin một cách thụ động. Khi đối chiếu nhiều nguồn, họ biết kiểm chứng các lập luận. Khi ghi chú bằng ngôn ngữ của mình, họ biến điều đã đọc thành hiểu biết cá nhân. Bởi vậy, đọc sách có phương pháp giúp người học phát triển tư duy độc lập."</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bài 14 -->
+                <div class="exercise-item">
+                    <div class="exercise-title">Bài 14: Sắp xếp đoạn văn & Loại bỏ câu lạc chủ đề</div>
+                    <p>Sắp xếp các câu a–d thành đoạn hợp lí và chỉ ra câu e không phù hợp:<br>
+                    a) Vì vậy, mỗi người cần kiểm tra nguồn và nội dung trước khi chia sẻ.<br>
+                    b) Chia sẻ thông tin là một hành động cần có trách nhiệm.<br>
+                    c) Một thông tin sai có thể khiến người nhận hiểu lầm và đưa ra quyết định không phù hợp.<br>
+                    d) Trách nhiệm ấy thể hiện trước hết ở việc cân nhắc độ chính xác của thông tin.<br>
+                    e) Khuôn viên học viện có nhiều cây xanh.</p>
+
+                    <button class="btn-toggle" onclick="toggleAns('ans-b14')">👁️ Xem Gợi Ý Đáp Án Bài 14</button>
+                    <div class="answer-box" id="ans-b14">
+                        <ul>
+                            <li><strong>Trật tự đoạn chuẩn:</strong> <strong>b ➔ d ➔ c ➔ a</strong></li>
+                            <li><strong>Giải thích liên kết:</strong> b nêu ý khái quát ➔ d giải thích biểu hiện (nối bằng từ "Trách nhiệm ấy") ➔ c nêu hậu quả để làm căn cứ ➔ a rút ra kết luận hành động (nối bằng "Vì vậy").</li>
+                            <li><strong>Câu lạc chủ đề:</strong> Câu e <em>("Khuôn viên học viện có nhiều cây xanh")</em> hoàn toàn không liên quan đến chủ đề trách nhiệm chia sẻ thông tin ➔ Loại bỏ.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bài 15 -->
+                <div class="exercise-item">
+                    <div class="exercise-title">Bài 15: Sửa phép nối sai và đại từ thế mơ hồ</div>
+                    <p class="warning-box">"Lắng nghe giúp người học nhận ra điều mình chưa hiểu. Tuy nhiên, mỗi học viên cần rèn thói quen ấy trong thảo luận. Giảng viên góp ý cho học viên. Họ cần sửa bài sau góp ý."</p>
+
+                    <button class="btn-toggle" onclick="toggleAns('ans-b15')">👁️ Xem Gợi Ý Đáp Án Bài 15</button>
+                    <div class="answer-box" id="ans-b15">
+                        <ul>
+                            <li><strong>Chỉ ra 2 điểm sai:</strong><br>
+                                1. Từ nối <em>"Tuy nhiên"</em> sai logic vì câu sau rút ra yêu cầu hệ quả từ câu trước (thay bằng <em>"Vì vậy"</em>).<br>
+                                2. Đại từ <em>"Họ"</em> ở câu cuối bị mơ hồ quy chiếu, không rõ chỉ giảng viên hay học viên.
+                            </li>
+                            <li><strong>Đoạn viết lại hoàn chỉnh:</strong><br>
+                                <em>"Lắng nghe giúp người học nhận ra điều mình chưa hiểu. <strong>Vì vậy</strong>, mỗi học viên cần rèn thói quen ấy trong thảo luận. Sau khi nhận góp ý của giảng viên, <strong>học viên</strong> cần sửa lại bài."</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bài 16 -->
+                <div class="exercise-item">
+                    <div class="exercise-title">Bài 16: Viết đoạn văn Diễn dịch có kiểm soát liên kết</div>
+                    <p><em>Yêu cầu:</em> Viết đoạn văn diễn dịch (6-8 câu) về vai trò của lắng nghe trong học tập; chỉ rõ câu chủ đề và các phương tiện liên kết được sử dụng.</p>
+
+                    <button class="btn-toggle" onclick="toggleAns('ans-b16')">👁️ Xem Gợi Ý Đáp Án Bài 16</button>
+                    <div class="answer-box" id="ans-b16">
+                        <p><strong>Đoạn văn tham khảo:</strong><br>
+                        <em>"(1) Lắng nghe giúp người học tham gia thảo luận có hiệu quả. (2) Trước hết, lắng nghe giúp học viên hiểu đúng câu hỏi và ý kiến của người khác. (3) Khi hiểu đúng, họ có cơ sở để phản hồi vào trọng tâm. (4) Họ cũng có thể nhận ra điểm còn thiếu trong cách nghĩ của mình. (5) Tuy nhiên, lắng nghe không có nghĩa là đồng ý với mọi nhận định. (6) Người học vẫn cần đặt câu hỏi và đối chiếu lí lẽ. (7) Vì thế, biết nghe và biết suy xét cần được rèn luyện cùng nhau."</em></p>
+                        <ul>
+                            <li><strong>Câu chủ đề:</strong> Câu (1) đứng đầu đoạn.</li>
+                            <li><strong>Phương tiện liên kết:</strong> Lặp từ <em>"lắng nghe"</em> (câu 1, 2); thế <em>"họ"</em> cho <em>"học viên"</em> (câu 3, 4); từ nối <em>"Trước hết", "Tuy nhiên", "Vì thế"</em>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bài 17 -->
+                <div class="exercise-item">
+                    <div class="exercise-title">Bài 17: Viết câu liên kết chuyển tiếp giữa hai đoạn văn</div>
+                    <p>Đoạn 1 bàn về ý nghĩa của lòng bao dung. Đoạn 2 bàn về yêu cầu không bao che hành vi sai. Viết 1 câu mở đoạn 2 để nối mạch nghĩa giữa hai đoạn.</p>
+
+                    <button class="btn-toggle" onclick="toggleAns('ans-b17')">👁️ Xem Gợi Ý Đáp Án Bài 17</button>
+                    <div class="answer-box" id="ans-b17">
+                        <strong>Câu chuyển đoạn gợi ý:</strong><br>
+                        <em>“Tuy nhiên, để sự bao dung giúp người mắc lỗi thực sự thay đổi, chúng ta cần phân biệt rõ giữa việc cảm thông với con người và việc bao che cho hành vi sai trái.”</em><br>
+                        ➔ <strong>Giải thích quan hệ:</strong> Nhắc lại từ khóa <em>"bao dung"</em> của đoạn 1, kết hợp từ nối <em>"Tuy nhiên"</em> để chuyển hướng từ khẳng định giá trị sang phân tích giới hạn/điều kiện ở đoạn 2.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PHẦN VI: VIẾT VĂN BẢN NGHỊ LUẬN -->
+        <h2 class="section-title">📜 VI. VIẾT VĂN BẢN NGHỊ LUẬN</h2>
+        <div class="content-box">
+            
+            <div class="content-part">
+                <div class="part-header">1. Lí Thuyết Trọng Tâm (Bài Văn Nghị Luận)</div>
+
+                <div class="sub-header">a) Các khái niệm cốt lõi trong văn nghị luận</div>
+                <ul>
+                    <li><strong>Luận đề:</strong> Vấn đề trung tâm được đưa ra bàn luận trong toàn bộ bài viết.</li>
+                    <li><strong>Luận điểm:</strong> Các ý kiến, nhận định cụ thể nhằm triển khai luận đề.</li>
+                    <li><strong>Lí lẽ & Dẫn chứng:</strong> Lí lẽ giải thích cơ sở; dẫn chứng là sự việc/chi tiết thực tế được phân tích minh chứng cho luận điểm.</li>
+                </ul>
+
+                <div class="sub-header">b) Bố cục chuẩn của bài văn nghị luận</div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-title">1. Mở bài</div>
+                        <div class="card-desc">Giới thiệu vấn đề (luận đề) và nêu định hướng quan điểm của bài viết.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">2. Thân bài</div>
+                        <div class="card-desc">Giải thích từ khóa ➔ Nêu luận điểm, lí lẽ, dẫn chứng ➔ Phản biện & đề xuất giải pháp.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">3. Kết bài</div>
+                        <div class="card-desc">Khẳng định lại nhận thức đã chứng minh và rút ra bài học/hướng hành động.</div>
+                    </div>
+                </div>
+
+                <div class="sub-header">c) 5 Bước quy trình tạo lập văn bản nghị luận</div>
+                <div class="compare-box">
+                    <strong>a) Phân tích đề:</strong> Gạch từ khóa, xác định kiểu bài & giới hạn ➔ <strong>b) Tìm ý:</strong> Trả lời các câu hỏi <em>Là gì? Vì sao? Như thế nào? Làm gì?</em> ➔ <strong>c) Lập dàn ý:</strong> Sắp xếp luận điểm logic ➔ <strong>d) Viết bài:</strong> Diễn đạt rõ ràng, liên kết đoạn chặt chẽ ➔ <strong>đ) Đọc soát:</strong> Kiểm tra chính tả, câu từ, dẫn chứng.
+                </div>
+            </div>
+
+            <!-- BÀI TẬP PHẦN VI -->
+            <div class="content-part">
+                <div class="part-header">2. Bài Tập Thực Hành Minh Họa Nghị Luận (Bài 18 - Bài 19)</div>
+
+                <!-- Bài 18 -->
+                <div class="exercise-item">
+                    <div class="exercise-title">Bài 18: Phân tích đề và tìm ý cho bài văn nghị luận</div>
+                    <p class="highlight-box">Đề bài: <em>“Bao dung với người khác không có nghĩa là chấp nhận mọi điều sai trái.”</em> Viết bài văn trình bày quan điểm của anh/chị.</p>
+                    <p><em>Yêu cầu:</em> Xác định luận đề, các từ khóa, quan điểm dự kiến và 3 câu hỏi tìm ý.</p>
+
+                    <button class="btn-toggle" onclick="toggleAns('ans-b18')">👁️ Xem Gợi Ý Đáp Án Bài 18</button>
+                    <div class="answer-box" id="ans-b18">
+                        <ul>
+                            <li><strong>Luận đề:</strong> Mối quan hệ giữa tinh thần bao dung và thái độ đối với các hành vi sai trái.</li>
+                            <li><strong>Từ khóa:</strong> <em>bao dung, không có nghĩa, chấp nhận mọi điều sai trái</em>.</li>
+                            <li><strong>Quan điểm dự kiến:</strong> Đồng tình với ý kiến; khẳng định bao dung cần gắn liền với tinh thần trách nhiệm và mục đích giúp người mắc lỗi sửa đổi.</li>
+                            <li><strong>3 Câu hỏi tìm ý:</strong><br>
+                                1. <em>Vì sao con người cần có lòng cảm thông và bao dung với người khác?</em><br>
+                                2. <em>Khi nào sự cảm thông biến thành thái độ bao che, dung túng cho cái sai?</em><br>
+                                3. <em>Làm thế nào để vừa thể hiện sự bao dung vừa giúp đối phương khắc phục hậu quả?</em>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bài 19 -->
+                <div class="exercise-item">
+                    <div class="exercise-title">Bài 19: Lập dàn ý chi tiết cho bài văn nghị luận (Đề Bài 18)</div>
+                    <p><em>Yêu cầu:</em> Lập dàn ý bài văn nghị luận xã hội bảo đảm mỗi luận điểm có hướng lí giải và dẫn chứng cụ thể.</p>
+
+                    <button class="btn-toggle" onclick="toggleAns('ans-b19')">👁️ Xem Gợi Ý Đáp Án Bài 19</button>
+                    <div class="answer-box" id="ans-b19">
+                        <strong>DÀN Ý CHI TIẾT GỢI Ý:</strong>
+                        <ol>
+                            <li><strong>MỞ BÀI:</strong> Dẫn dắt vấn đề ứng xử trước lỗi lầm của người khác; nêu luận đề <em>"Bao dung không đồng nghĩa với chấp nhận mọi sai trái"</em>.</li>
+                            <li><strong>THÂN BÀI:</strong>
+                                <ul>
+                                    <li><em>Luận điểm 1 (Giải thích):</em> Phân biệt <strong>bao dung</strong> (rộng lòng cảm thông, tạo cơ hội sửa sai) với <strong>chấp nhận mọi sai trái</strong> (thái độ dung túng, bỏ mặc hậu quả).</li>
+                                    <li><em>Luận điểm 2 (Vì sao cần bao dung?):</em> Con người không ai hoàn hảo; bao dung giúp người mắc lỗi giải tỏa áp lực định kiến để có động lực thay đổi (Dẫn chứng: Trải nghiệm góp ý sửa bài tập).</li>
+                                    <li><em>Luận điểm 3 (Vì sao không thể bao che cái sai?):</em> Bỏ qua sai trái làm mất tính răn đe, khiến hành vi xấu tiếp diễn gây tổn hại cộng đồng (Dẫn chứng tình huống giả định).</li>
+                                    <li><em>Luận điểm 4 (Giải pháp bao dung đúng cách):</em> Lắng nghe nguyên nhân, chỉ rõ lỗi sai, hỗ trợ và theo dõi quá trình sửa đổi.</li>
+                                    <li><em>Luận điểm 5 (Mở rộng phản biện):</em> Bao dung không xóa bỏ trách nhiệm pháp lý/đạo đức đối với hậu quả đã gây ra.</li>
+                                </ul>
+                            </li>
+                            <li><strong>KẾT BÀI:</strong> Khẳng định giá trị của lòng bao dung đi đôi với sự tỉnh táo và tinh thần trách nhiệm.</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            Học Viện Phật Giáo Việt Nam (ĐTTX-K.12) • Trọn Bộ 4 Trang Đề Cương Ôn Tập Tiếng Việt Thực Hành 🌟
+        </footer>
+    </div>
+
+    <!-- Script Hiệu Ứng Vũ Trụ Starfield -->
+    <script>
+        const canvas = document.getElementById('space-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let stars = [];
+        const numStars = 180;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initStars();
+        }
+
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < numStars; i++) {
+                stars.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 1.8 + 0.2,
+                    color: ['#ffffff', '#fbcfe8', '#f43f5e', '#38bdf8', '#fbbf24'][Math.floor(Math.random() * 5)],
+                    alpha: Math.random(),
+                    speed: Math.random() * 0.012 + 0.004
+                });
+            }
+        }
+
+        function drawStars() {
+            ctx.clearRect(0, 0, width, height);
+
+            let grad1 = ctx.createRadialGradient(width * 0.4, height * 0.3, 50, width * 0.4, height * 0.3, width * 0.55);
+            grad1.addColorStop(0, 'rgba(236, 72, 153, 0.18)');
+            grad1.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad1;
+            ctx.fillRect(0, 0, width, height);
+
+            let grad2 = ctx.createRadialGradient(width * 0.75, height * 0.75, 50, width * 0.75, height * 0.75, width * 0.45);
+            grad2.addColorStop(0, 'rgba(0, 242, 254, 0.12)');
+            grad2.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad2;
+            ctx.fillRect(0, 0, width, height);
+
+            stars.forEach(star => {
+                star.alpha += star.speed;
+                if (star.alpha > 1 || star.alpha < 0) {
+                    star.speed = -star.speed;
+                }
+
+                ctx.save();
+                ctx.globalAlpha = Math.abs(star.alpha);
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = star.color;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = star.color;
+                ctx.fill();
+                ctx.restore();
+            });
+
+            requestAnimationFrame(drawStars);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        drawStars();
+
+        function toggleAns(id) {
+            const el = document.getElementById(id);
+            if (el.style.display === "block") {
+                el.style.display = "none";
+            } else {
+                el.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
